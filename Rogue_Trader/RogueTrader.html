@@ -82,7 +82,7 @@
                         <td><input type="checkbox" name="attr_awareness1" value="0.5" /></td>
                         <td><input type="checkbox" name="attr_awareness2" value="10" /></td>
                         <td><input type="checkbox" name="attr_awareness3" value="10" /></td>
-                        <td><button type="roll" name="roll_awareness" value="/em rolls Awareness with [[(@{awareness}+?{Modifier|0}-1d100)/10]] degree(s) of success!">
+                        <td><button type="roll" name="roll_awareness" value="!power {{ 	--name|@{selected|token_name} Awareness	--leftsub| Base - @{awareness}	--rightsub| Awareness	--Roll:| [[(@{awareness}+?{Modifier|0}-1d100)/10]] degree(s) of success!}}">
                     <input type="number" name="attr_awareness" value="floor((@{awareness1}+0.5)*@{per}+@{awareness2}+@{awareness3})" disabled="true"/>
                 </button></td>
                     </tr>
@@ -91,7 +91,7 @@
                         <td><input type="checkbox" name="attr_barter1" value="0.5" /></td>
                         <td><input type="checkbox" name="attr_barter2" value="10" /></td>
                         <td><input type="checkbox" name="attr_barter3" value="10" /></td>
-                        <td><button type="roll" name="roll_Barter" value="/em rolls Barter with [[(@{Barter}+?{Modifier|0}-1d100)/10]] degree(s) of success!">
+                        <td><button type="roll" name="roll_Barter" value="!power {{ 	--name|@{selected|token_name} Barter	--leftsub| Base - @{Barter}	--rightsub| Barter	--Roll:| [[(@{Barter}+?{Modifier|0}-1d100)/10]] degree(s) of success!}}">
                     <input type="number" name="attr_Barter" value="floor((@{Barter1}+0.5)*@{fel}+@{Barter2}+@{Barter3})" disabled="true"/>
                 </button></td>
                     </tr>
@@ -316,7 +316,7 @@
             <!-- Mid Column / Characteristics -->
             <div class="sheet-col sheet-characteristics">
                 <h3>Characteristics</h3>
-                <button type="roll" name="roll_ws" value="/me rolls a Weapon Skill check with [[(@{WS}+?{Modifier|0}-1d100)/10]] degree(s) of success!"><label>Weapon Skill (WS)</label></button><br>
+                <button type="roll" name="roll_ws" value="!power {{ 	--name|@{selected|token_name} Weapon Skill	--leftsub| Base - @{WS}	--rightsub| WS	--Roll:| [[(@{WS}+?{Modifier|0}-1d100)/10]] degree(s) of success!}}"><label>Weapon Skill (WS)</label></button><br>
                 <input type="text" name="attr_ws" value="0" />
                 <button type="roll" name="roll_bs" value="/me rolls a Ballistic Skill check with [[(@{BS}+?{Modifier|0}-1d100)/10]] degree(s) of success!"><label>Ballistic Skill (BS)</label></button><br>
                 <input type="text" name="attr_bs" value="0" />
@@ -449,7 +449,7 @@
                     <div class="sheet-quickborder">
                         <div class="sheet-row">
                             <div class="sheet-item sheet-tiny">
-                                <button type="roll" name="roll_meleeattack" value="/me uses their @{meleeweaponname} to try and hit and achieves [[(@{ws}+?{Modifier|0}-1d100)/10]] degree(s) of success! (Pen: [[@{meleeweaponpen}]])">
+                                <button type="roll" name="roll_meleeattack" value="!power {{ 	--name|@{selected|token_name} @{meleeweaponname}  --leftsub|@{meleeweapontype} --rightsub|Melee Attack 	--Attack:|[[(@{WS}+?{Modifier|0}-1d100)/10]] degree(s) of success!	--HitLocation:| **[[1t[Hit-Locations]]] ** 	--Damage:| [[ {@{meleeweapondamage}+(floor(@{strength}/10)), (@{meleeweapontearing}*(@{meleeweapondamage}+(floor(@{strength}/10))))}kh1]] 	--Pen:|@{meleeweaponpen}}}">
                             <label>Name:</label>
                         </button></div>
                             <div class="sheet-item sheet-big"><input type="text" name="attr_meleeweaponname" /></div>
@@ -459,7 +459,7 @@
                         </div>
                         <div class="sheet-row">
                             <div class="sheet-item sheet-small">
-                                <button type="roll" name="roll_meleedamage" value="/me does [[{@{meleeweapondamage}+(floor(@{strength}/10)), (@{meleeweapontearing}*(@{meleeweapondamage}+(floor(@{strength}/10))))}kh1]] @{meleeweapontype} damage!">
+                                <button type="roll" name="roll_meleedamage" value="!power {{ 	--name|@{selected|token_name} @{meleeweaponname} --leftsub|@{meleeweapontype} --rightsub|Damage	--Damage:| [[ {@{meleeweapondamage}+(floor(@{strength}/10)), (@{meleeweapontearing}*(@{meleeweapondamage}+(floor(@{strength}/10))))}kh1]] 	--Pen:|@{meleeweaponpen}}}">
                             <label>Damage:</label>
                         </button></div>
                             <div class="sheet-item sheet-small"><input type="text" name="attr_meleeweapondamage" /></div>
